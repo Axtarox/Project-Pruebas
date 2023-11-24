@@ -17,14 +17,7 @@ pipeline {
                     // Crear el archivo con el contenido deseado
                     writeFile file: fileName, text: "Hola Mundo"
                     
-                    // Imprimir la ubicación del archivo creado (opcional)
-                    echo "Archivo creado: ${fileName}"
-                    
-                    // Mover el archivo a otra carpeta
-                    bat "move ${fileName} ruta\\\\carpeta_destino\\\\${fileName}"
-                    // o para sistemas Unix:
-                    // sh "mv ${fileName} ruta/carpeta_destino/${fileName}"
-                }
+                  
             }
         }
     }
