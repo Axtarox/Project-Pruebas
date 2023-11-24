@@ -8,17 +8,27 @@ pipeline {
     agent any
 
     stages {
-        stage(\'Crear Archivo\') {
+        stage(\'Crear Documento\') {
             steps {
                 script {
-                    def fecha = new Date().format("yyyy-MM-dd-HH-mm-ss")
-                    def fileName = "${fecha}.txt"
-                    
-                    // Crear el archivo con el contenido deseado
-                    writeFile file: fileName, text: "Hola Mundo"
-                    
-                  
+                    def currentDate = new Date()
+                    def formattedDate = currentDate.format("yyyyMMdd_HHmmss")
+                    def fileName = "documento_${formattedDate}.txt"
+
+                    echo "Creando documento: ${fileName}"
+
+                    writeFile file: fileName, text: "Hola mundo"
+                }
             }
+        }
+    }
+
+    post {
+        success {
+            echo "¡Tarea completada con éxito!"
+        }
+        failure {
+            echo "La tarea ha fallado. Revisa los detalles."
         }
     }
 }'''
