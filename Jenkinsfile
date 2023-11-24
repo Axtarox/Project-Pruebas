@@ -2,6 +2,7 @@ pipeline {
   agent any
   stages {
     stage('paso1') {
+      agent any
       steps {
         sh '''pipeline {
     agent any
@@ -16,7 +17,7 @@ pipeline {
                     // Crear el archivo con el contenido deseado
                     writeFile file: fileName, text: "Hola Mundo"
                     
-                    // Imprimir la ubicación del archivo creado (opcional)
+                    // Imprimir la ubicaciÃ³n del archivo creado (opcional)
                     echo "Archivo creado: ${fileName}"
                     
                     // Mover el archivo a otra carpeta
