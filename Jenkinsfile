@@ -1,7 +1,7 @@
 pipeline {
   agent any
   stages {
-    stage('error') {
+    stage('paso1') {
       steps {
         sh '''pipeline {
     agent any
@@ -20,9 +20,10 @@ pipeline {
                     echo "Archivo creado: ${fileName}"
                     
                     // Mover el archivo a otra carpeta
-                    bat "move ${fileName} ruta\\\\carpeta_prueba1\\\\${fileName}"
+                    bat "move ${fileName} ruta\\\\carpeta_destino\\\\${fileName}"
                     // o para sistemas Unix:
-               }     
+                    // sh "mv ${fileName} ruta/carpeta_destino/${fileName}"
+                }
             }
         }
     }
