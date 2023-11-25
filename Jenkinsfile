@@ -4,7 +4,8 @@ pipeline {
     stage('paso1') {
       agent any
       steps {
-        sh '''pipeline {
+        sh '''
+pipeline {
     agent any
 
     stages {
@@ -33,8 +34,8 @@ pipeline {
     }
 }
 '''
-        }
       }
-
     }
+
   }
+}
