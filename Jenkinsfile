@@ -31,7 +31,8 @@ pipeline {
             echo "La tarea ha fallado. Revisa los detalles."
         }
     }
-}'''
+}
+'''
         }
       }
 
